@@ -1,0 +1,50 @@
+.pageTwoTitle {
+  color: #784E3D;
+  font-weight: 800;
+  font-size: 4rem;
+  width: 45vw;
+  margin: 4rem 0 0 5rem;
+}
+
+.overviewContainer {
+  display: flex;
+}
+
+.overviewParagraph {
+  color: #000;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  width: 34vw;
+}
+
+.overview, .overviewParagraph {
+  margin-left: 5rem;
+}
+
+.phoneImage {
+  display: flex;
+}
+
+.phone {
+  position: absolute;
+  width: 12vw;
+  height: 50vh;
+  outline: 5px solid black;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  right: 30vw;
+}
+
+.checkerboardImage {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.greenArrowImage {
+  position: relative;
+  width: 40vw;
+  left: 5vw;
+  bottom: 4vw;
+  transform: rotateX(180deg);
+}
