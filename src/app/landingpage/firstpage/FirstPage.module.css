@@ -6,15 +6,15 @@
 .login, .signup {
   font-weight: 600;
   margin: 2rem 4rem 0 4rem;
-  padding: 5px 15px 5px 15px;
-  outline: 2px solid #784E3D;
-  border-radius: 25px;
+  padding: 0.313rem .938rem;
+  /* outline: 2px solid #784E3D; */
+  /* border-radius: 25px; */
 }
 
 .login:hover, .signup:hover {
   background-color: #784E3D;
   color:#FFE5CC;
-  padding: 5px 15px 5px 15px;
+  padding: 0.313rem .938rem;
 }
 
 .header, .titleContainer, .dashboardImageContainer {
