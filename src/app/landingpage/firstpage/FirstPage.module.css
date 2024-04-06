@@ -4,9 +4,10 @@
 }
 
 .login, .signup {
-  font-weight: 600;
+  font-weight: 500;
   margin: 2rem 4rem 0 4rem;
-  padding: 0.313rem .938rem;
+  padding: 0.313rem 0.938rem;
+  font-size: 1.2rem;
   /* outline: 2px solid #784E3D; */
   /* border-radius: 25px; */
 }
@@ -23,13 +24,10 @@
   justify-content: center;
 }
 
-/* .headerContent {
-  margin: 2rem 4rem 0 4rem;
-} */
-
 .logo {
+  position: relative;
   font-size: 2.5rem;
-  margin: 4rem 0 0 5rem;
+  margin: 0 0 2rem 5rem;
   font-family: "Poppins",;
   background-image: linear-gradient(to right, #784E3D, #3D2216);
   background-clip: text;

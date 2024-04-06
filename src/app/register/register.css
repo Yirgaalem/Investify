@@ -246,17 +246,16 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 85vh;
+  height: 70vh;
 }
 
 .headerText {
-  margin:0;
-  padding:0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 800;
   font-size: 6rem;
+  margin-bottom: 3rem;
 }
 
 .home {
@@ -292,5 +291,5 @@
 
 .arrow {
   width: 2.3rem;
-  height: auto
+  height: auto;
 }

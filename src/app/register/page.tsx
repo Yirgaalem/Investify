@@ -1,9 +1,10 @@
 "use client";
 import { useState } from 'react';
-import "./login.css";
+import "./register.css";
 import Image from "next/image";
 import google from '../../../public/icons/google-icon.svg';
-import arrow from "../../../public/images/arrow.png";
+import Link from 'next/link';
+import PageLayout from '@/Layouts/landingPageLayout/landingPageLayout';
 
 export default function Login() {
 
@@ -11,10 +12,15 @@ export default function Login() {
   let headerText: string = isActive ? "Let's Go" : 'Get Started';
 
   return (
-    <>
+    <PageLayout>
       <div className="headerContainer">
         <div className="investify">Investify</div>
-        <div className="home"><button>Home</button><Image className="arrow" src={arrow} alt='arrow'/></div>
+        
+        <div className="home">
+          <Link href={'/'}>
+            <button>Home</button>
+          </Link>
+        </div>
       </div>
 
       <div className="tabContainer">
@@ -25,7 +31,6 @@ export default function Login() {
               <form>
                   <div className="createAccountHeader">Create Account</div>
                   
-                  {/* <span>or use your email for registeration</span> */}
                   <input type="text" placeholder="Username"/>
                   <input type="email" placeholder="Email"/>
                   <input type="password" placeholder="Password"/>
@@ -81,7 +86,7 @@ export default function Login() {
           </div>
       </div>
       </div>
-    </>
+    </PageLayout>
   );
   
 }
