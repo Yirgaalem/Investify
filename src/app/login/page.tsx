@@ -1,3 +1,5 @@
+"use client";
+import { useState } from 'react';
 import "./login.css";
 import Image from "next/image";
 import google from '../../../public/icons/google-icon.svg';
@@ -20,9 +22,10 @@ export default function Login() {
       });
     }
   } */
+  const [isActive, setIsActive] = useState(false);
   return (
     <>
-      <div className="container" id="container">
+      <div className={`container ${isActive ? 'active':''}`} id="container">
         <div className="form-container sign-up">
             <form>
                 <h1>Create Account</h1>
@@ -66,13 +69,13 @@ export default function Login() {
                 <div className="toggle-panel toggle-left">
                     <h1>Have an account?</h1>
                     <p>Login and continue managing your investments</p>
-                    <button id="login">Sign In</button>{/*both this and the reigster sign up button className="hidden"*/} 
+                    <button id="login" onClick={() => {setIsActive(!isActive)}}>Sign In</button>{/*both this and the reigster sign up button className="hidden"*/} 
                 </div>
 
                 <div className="toggle-panel toggle-right">
                     <div className="welcome">Welcome!</div>
                     <p>Sign up today and watch your investments take flight!</p>
-                    <button id="register">Sign Up</button>
+                    <button id="register" onClick={() => {setIsActive(!isActive)}}>Sign Up</button>
                 </div>
             
             </div>
@@ -81,4 +84,5 @@ export default function Login() {
     </>
 
   );
+  
 }
