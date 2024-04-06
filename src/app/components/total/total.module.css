@@ -1,0 +1,27 @@
+.totalContainer {
+  outline: 2px solid #784E3D;
+  background-color: #FFD7B3;
+  margin: 2rem 0 0 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.totalTitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.totalAmount {
+  font-size: 2.3rem;
+}
+
+.profitLoss {
+  color: #33CC00;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 3rem 0 1rem 1rem;
+}
+
+.totalTitle, .totalAmount {
+  margin-left: .5rem;
+}

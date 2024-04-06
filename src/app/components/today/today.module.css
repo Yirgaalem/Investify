@@ -1,0 +1,38 @@
+.todayContainer {
+  outline: 2px solid #784E3D;
+  background-color: #FFD7B3;
+  margin: 2rem 0 0 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+}
+
+.todayTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 10rem;
+}
+
+.amounts {
+  margin-top: 4.2rem; 
+}
+
+.totalTitle, .stocksTitle, .cryptoTitle {
+  display: flex;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.totalAmount, .stocksAmount, .cryptoAmount {
+  padding-bottom: 1.3rem;
+  font-weight: 500;
+}
+
+.totalAmount, .stocksAmount { 
+  color: #33CC00;
+}
+
+.cryptoAmount {
+  color: #FF4D4D;
+}
