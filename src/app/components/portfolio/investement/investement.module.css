@@ -1,0 +1,48 @@
+.investementContainer {
+  display: flex;
+  width: 99.4%;
+  justify-content: space-between;
+  border-bottom: 2px solid #784E3D; 
+  padding: 1.3rem 0;
+}
+
+.name, .amount, .cryptoType, .stockType {
+  width: 3.5rem;
+}
+
+.name, .amount {
+  margin-right: 4.5rem;
+}
+
+.amount, .cryptoType, .stockType {
+  display: flex;
+  justify-content: center;
+}
+
+.cryptoType, .stockType {
+  padding: .2rem 3rem;
+  border-radius: 15px;
+}
+
+.cryptoType {
+  background-color: #784E3D;
+  color: #FFD7B3;
+}
+
+.stockType {
+  background-color: #C39988;
+  color: #FFD7B3;
+}
+
+.positivePnL, .negativePnL {
+  text-align: right;
+  width: 5rem;
+}
+
+.positivePnL {
+  color: #33CC00;
+}
+
+.negativePnL {
+  color: #FF4D4D;
+}
