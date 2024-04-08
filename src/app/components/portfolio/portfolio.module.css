@@ -1,9 +1,10 @@
 .portfolioContainer {
   outline: 2px solid #784E3D;
   background-color: #FFD7B3;
-  border-radius: 10px;
-  width: 45rem;
-  padding: 2rem 2rem 7rem 2rem;
+  margin: 2rem 0 0 11.5rem;
+  border-radius: 15px;
+  width: 40rem;
+  padding: 2rem 2rem 4rem 2rem;
 }
 
 .portfolioTitle {

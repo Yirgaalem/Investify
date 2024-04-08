@@ -23,7 +23,11 @@ export default function Investement(props: investementProps) {
   :
   (name = `${props.name}`, typeStyle = styles.cryptoType);
 
+  // let typeStyle: string = '';
+  // type === 'Stock' ? typeStyle = styles.stockType : typeStyle = styles.cryptoType;
 
+  // let pnlStyle: string = '';
+  // props.pnl > 0 ? pnlStyle = styles.positivePnL : pnlStyle = styles.negativePnL
 
   return (
     <div className={styles.investementContainer}>

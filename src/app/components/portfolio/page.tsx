@@ -11,14 +11,15 @@ export default function Portfolio() {
       
       <div className={styles.titleContainer}>
         <div className={styles.portfolioTitle}>Portfolio</div>
-        {/* Add a image of an arrow */}
-        <div className={styles.investementsContainer}>
-          <Link href="/portfolio">
-            <button className={styles.investements}>
-              All Investements <Image className={styles.rightArrow} src={rightArrow} alt='right-arrow'/>
-            </button>
-          </Link>
-        </div>
+      
+        {/* <div className={styles.investementsContainer}> */}
+        <Link href="/portfolio">
+          <button className={styles.investements}>
+            All Investements <Image className={styles.rightArrow} src={rightArrow} alt='right-arrow'/>
+          </button>
+        </Link>
+        {/* </div> */}
+      
       </div>
 
       <div className={styles.categoriesContainer}>
