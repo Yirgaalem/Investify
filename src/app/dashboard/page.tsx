@@ -38,8 +38,8 @@ export default function Dashboard() {
       <PageLayout>
         <div className={styles.dashboardContent}>
           <div className={styles.top}>
-            <Total/>
-            <Today/>
+            <Total amount={103030.90} pnl={28019.90}/>
+            <Today total={3832.12} stocks={4832.12} crypto={-1000.00}/>
           </div>
           
           <div className={styles.bottom}>

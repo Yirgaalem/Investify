@@ -1,42 +1,64 @@
 import styles from './today.module.css';
 
-export default function Today() {
+export type todayProps = {
+  total: number;
+  stocks: number;
+  crypto: number;
+}
+
+export default function Today(props: todayProps) {
   /* 
     When I acc pull the information from DB, have "Total" + {amount}
     If the amount is > 0 add a '+' beofre the amount and be green colour
   */
-  const profitLoss: string = '+$3832.12';
-  const stocks: string = '+$4832.12';
-  const crypto: string = '-$1000.00';
 
+  let total: string; let totalStyle: string;
+  let stocks: string; let stocksStyle: string;
+  let crypto: string; let cryptoStyle: string;
+
+
+  props.total > 0 ? 
+  (total = `+$${props.total}`, totalStyle = styles.totalPositive) 
+  : 
+  (total = `-$${Math.abs(props.total)}`,totalStyle = styles.totalNegative);
+
+  props.stocks > 0 ? 
+  (stocks = `+$${props.stocks}`, stocksStyle = styles.stocksPositive) 
+  : 
+  (stocks = `-$${Math.abs(props.stocks)}`, stocksStyle = styles.stocksNegative);
+  
+  props.crypto > 0 ? 
+  (crypto = `+$${props.crypto}`, cryptoStyle = styles.cryptoPositive) 
+  : 
+  (crypto = `-$${Math.abs(props.crypto)}`, cryptoStyle = styles.cryptoNegative);
+  
   return (
     <div className={styles.todayContainer}> 
       <div className={styles.titles}>
         <div className={styles.todayTitle}>Today</div>
 
-        <div className={styles.totalTitle}>Total:
+        <div className={styles.amount}>
+          <div className={styles.totalTitle}>Total:
+            <div className={styles.totalStyle}>
+              {total}
+            </div>
+          </div>
           
-        </div>
-        
-        <div className={styles.stocksTitle}>Stocks:
+          <div className={styles.stocksTitle}>Stocks:
+            <div className={styles.stocksStyle}>
+              {stocks}
+            </div>
+          </div>
           
-        </div>
-        
-        <div className={styles.cryptoTitle}>Crypto:
-          
+          <div className={styles.cryptoTitle}>Crypto:
+            <div className={styles.cryptoStyle}>
+              {crypto}
+            </div>
+          </div>
         </div>
       </div>
-      <div className={styles.amounts}>
-        <div className={styles.totalAmount}>
-          {profitLoss}
-        </div>
-        <div className={styles.stocksAmount}>
-          {stocks}
-        </div>
-        <div className={styles.cryptoAmount}>
-          {crypto}
-        </div>
-      </div>
+
+
 
     </div>
   );

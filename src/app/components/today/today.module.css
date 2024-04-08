@@ -5,6 +5,8 @@
   border-radius: 10px;
   padding: 2rem;
   display: flex;
+  width: 20rem;
+  height: 18rem;
 }
 
 .todayTitle {
@@ -13,26 +15,28 @@
   width: 10rem;
 }
 
-.amounts {
-  margin-top: 4.2rem; 
-}
-
 .totalTitle, .stocksTitle, .cryptoTitle {
   display: flex;
   font-size: 1.2rem;
-  margin: 1rem 0;
+  margin: .3rem 0;
   font-weight: 500;
+  width: 17rem;
+  justify-content: space-between;
 }
 
-.totalAmount, .stocksAmount, .cryptoAmount {
+.totalTitle {
+  margin-top: 1rem;  
+}
+
+.totalStyle, .stocksStyle, .cryptoStyle {
   padding-bottom: 1.3rem;
   font-weight: 500;
 }
 
-.totalAmount, .stocksAmount { 
+.totalStyle, .stocksStyle { 
   color: #33CC00;
 }
 
-.cryptoAmount {
+.cryptoStyle {
   color: #FF4D4D;
 }

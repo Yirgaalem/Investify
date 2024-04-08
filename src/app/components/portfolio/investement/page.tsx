@@ -9,18 +9,21 @@ export type investementProps = {
 
 export default function Investement(props: investementProps) {
   const amount: number = props.amount;
-  const type: string = props.type;
+  const type: string = props.type; let typeStyle: string = '';
   let name: string = '';
-  let pnl: string = '';
+  let pnl: string = '';  let pnlStyle: string = '';
 
-  props.pnl > 0 ? pnl = `+$${props.pnl}` : pnl = `-$${Math.abs(props.pnl)}`;
-  props.type === 'Stock' ? name = `$${props.name}` : name = `${props.name}`
+  props.pnl > 0 ? 
+  (pnl = `+$${props.pnl}`, pnlStyle = styles.positivePnL) 
+  : 
+  (pnl = `-$${Math.abs(props.pnl)}`, pnlStyle = styles.negativePnL);
+  
+  props.type === 'Stock' ?
+  (name = `$${props.name}`, typeStyle = styles.stockType)
+  :
+  (name = `${props.name}`, typeStyle = styles.cryptoType);
 
-  let typeStyle: string = '';
-  type === 'Stock' ? typeStyle = styles.stockType : typeStyle = styles.cryptoType;
 
-  let pnlStyle: string = '';
-  props.pnl > 0 ? pnlStyle = styles.positivePnL : pnlStyle = styles.negativePnL
 
   return (
     <div className={styles.investementContainer}>
