@@ -1,6 +1,7 @@
 import styles from './header.module.css';
 import redd from './../../../../public/images/sexyy-redd.jpg'
 import Image from 'next/image';
+import Link from 'next/link';
 
 export type headerProps = {
   headerLeft: string;
@@ -12,9 +13,15 @@ export default function Header(props: headerProps) {
   
   const headerContent: JSX.Element = (
     <div className={styles.headerOptions}>
-      <button className={styles.left}>{props.headerLeft}</button>
+      <Link href={`/${props.headerLeft.toLowerCase()}`}>
+        <button className={styles.left}>{props.headerLeft}</button>
+      </Link>
+      
       <button className={styles.middle}>{props.headerMiddle}</button>
-      <button className={styles.right}>{props.headerRight}</button>
+
+      <Link href={`/${props.headerRight.toLowerCase()}`}>
+        <button className={styles.right}>{props.headerRight}</button>
+      </Link>
     </div>
   );
 
