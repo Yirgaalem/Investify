@@ -1,4 +1,5 @@
 import styles from './total.module.css';
+import { currency } from '@/app/page';
 
 export type totalProps = {
   amount: number;
@@ -7,10 +8,10 @@ export type totalProps = {
 
 export default function Total(props: totalProps) {
   
-  const amount: string = `$${props.amount}`;
+  const amount: string = `${currency.format(props.amount)}`;
   let pnl: string = '';
 
-  props.pnl > 0 ? pnl = `+$${props.pnl}` : pnl = `-$${props.pnl}`;
+  props.pnl > 0 ? pnl = `+${currency.format(props.pnl)}` : pnl = `-${currency.format(props.pnl)}`;
 
   let pnlStyle: string;
   props.pnl > 0 ? pnlStyle = styles.positive : pnlStyle = styles.negative;

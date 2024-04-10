@@ -1,7 +1,7 @@
 import styles from './charts.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import rightArrow from '../../../../public/images/arrow-right.png';
+import rightArrow from '../../../../../public/images/arrow-right-light.png';
 
 export default function Charts() {
   

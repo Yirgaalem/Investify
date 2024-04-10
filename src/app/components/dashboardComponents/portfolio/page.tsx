@@ -1,6 +1,6 @@
 import Investement from './investement/page';
 import styles from './portfolio.module.css';
-import rightArrow from '../../../../public/images/arrow-right.png';
+import rightArrow from '../../../../../public/images/arrow-right-light.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,14 +11,12 @@ export default function Portfolio() {
       
       <div className={styles.titleContainer}>
         <div className={styles.portfolioTitle}>Portfolio</div>
-      
-        {/* <div className={styles.investementsContainer}> */}
+        
         <Link href="/portfolio">
           <button className={styles.investements}>
             All Investements <Image className={styles.rightArrow} src={rightArrow} alt='right-arrow'/>
           </button>
         </Link>
-        {/* </div> */}
       
       </div>
 

@@ -1,4 +1,5 @@
 import styles from './investement.module.css';
+import { currency } from '@/app/page';
 
 export type investementProps = {
   name: string;
@@ -13,22 +14,18 @@ export default function Investement(props: investementProps) {
   let name: string = '';
   let pnl: string = '';  let pnlStyle: string = '';
 
+
   props.pnl > 0 ? 
-  (pnl = `+$${props.pnl}`, pnlStyle = styles.positivePnL) 
+  (pnl = `+${currency.format(props.pnl)}`, pnlStyle = styles.positivePnL) 
   : 
-  (pnl = `-$${Math.abs(props.pnl)}`, pnlStyle = styles.negativePnL);
+  (pnl = `-${currency.format(Math.abs(props.pnl))}`, pnlStyle = styles.negativePnL);
   
   props.type === 'Stock' ?
-  (name = `$${props.name}`, typeStyle = styles.stockType)
+  (name = `${currency.format(props.name)}`, typeStyle = styles.stockType)
   :
   (name = `${props.name}`, typeStyle = styles.cryptoType);
 
-  // let typeStyle: string = '';
-  // type === 'Stock' ? typeStyle = styles.stockType : typeStyle = styles.cryptoType;
-
-  // let pnlStyle: string = '';
-  // props.pnl > 0 ? pnlStyle = styles.positivePnL : pnlStyle = styles.negativePnL
-
+  
   return (
     <div className={styles.investementContainer}>
       <div className={styles.name}>{name}</div>

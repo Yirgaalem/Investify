@@ -1,18 +1,20 @@
-.chartsContianer {
+.portfolioContainer {
   outline: 2px solid #784E3D;
   background-color: #FFD7B3;
-  margin: 2rem 0 0 15rem;
+  margin: 2rem 0 0 11.5rem;
   border-radius: 15px;
   width: 40rem;
-  padding: 2rem 2rem 5rem 2rem;
+  padding: 2rem 2rem 4rem 2rem;
+  /* box-shadow: 0 0 5px 2px rgba(0, 0, 0, .8); */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
 }
 
-.chartsTitle {
+.portfolioTitle {
   font-size: 2rem;
   font-weight: 700;
 }
 
-.allCharts {
+.investements {
   background-color: #784E3D;
   color: #FFD7B3;
   display: flex;
@@ -28,7 +30,15 @@
   margin-top: .15rem;
 }
 
-.titleContainer {
+.categoriesContainer, .titleContainer {
   display: flex;
   justify-content: space-between;
+}
+
+.categoriesContainer {
+  width: 99.4%;
+  margin-top: 3rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }

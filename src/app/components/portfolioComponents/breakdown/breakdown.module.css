@@ -1,0 +1,51 @@
+.breakdownContainer {
+  outline: 2px solid #784E3D;
+  background-color: #FFD7B3;
+  margin: 14rem 0 0 15rem;
+  border-radius: 15px;
+  width: 33rem;
+  height: 27rem;
+  padding: 2rem 2rem 4rem 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+}
+
+.breakdownTitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.graphContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.stocks, .crypto, .total {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-left: 1rem; 
+}
+
+.crypto {
+  padding-bottom: .5rem;
+}
+
+.total {
+  padding-top: .5rem;
+}
+
+.cryptoBox {
+  border-bottom: 1px solid #784E3D; 
+  width: 110%;
+  padding-right: 1rem;
+}
+
+.pieGraph,.numerical {
+  width: 14rem;
+}
+
+.arrow {
+  width: 2rem;
+  margin: 2rem;
+}

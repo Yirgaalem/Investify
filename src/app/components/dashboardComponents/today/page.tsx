@@ -1,4 +1,5 @@
 import styles from './today.module.css';
+import { currency } from '@/app/page';
 
 export type todayProps = {
   total: number;
@@ -18,19 +19,19 @@ export default function Today(props: todayProps) {
 
 
   props.total > 0 ? 
-  (total = `+$${props.total}`, totalStyle = styles.totalPositive) 
+  (total = `+${currency.format(props.total)}`, totalStyle = styles.totalPositive) 
   : 
-  (total = `-$${Math.abs(props.total)}`,totalStyle = styles.totalNegative);
+  (total = `-${currency.format(Math.abs(props.total))}`,totalStyle = styles.totalNegative);
 
   props.stocks > 0 ? 
-  (stocks = `+$${props.stocks}`, stocksStyle = styles.stocksPositive) 
+  (stocks = `+${currency.format(props.stocks)}`, stocksStyle = styles.stocksPositive) 
   : 
-  (stocks = `-$${Math.abs(props.stocks)}`, stocksStyle = styles.stocksNegative);
+  (stocks = `-${currency.format(Math.abs(props.stocks))}`, stocksStyle = styles.stocksNegative);
   
   props.crypto > 0 ? 
-  (crypto = `+$${props.crypto}`, cryptoStyle = styles.cryptoPositive) 
+  (crypto = `+${currency.format(props.crypto)}`, cryptoStyle = styles.cryptoPositive) 
   : 
-  (crypto = `-$${Math.abs(props.crypto)}`, cryptoStyle = styles.cryptoNegative);
+  (crypto = `-${currency.format(Math.abs(props.crypto))}`, cryptoStyle = styles.cryptoNegative);
   
   return (
     <div className={styles.todayContainer}> 
