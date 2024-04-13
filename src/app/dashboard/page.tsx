@@ -1,4 +1,4 @@
-import PageLayout from '@/Layouts/landingPageLayout/landingPageLayout';
+import PageLayout from '@/Layouts/landingPageLayout/pageLayout';
 import Header from '../components/header/page';
 import styles from './dashboard.module.css';
 import Total from '../components/dashboardComponents/total/page';

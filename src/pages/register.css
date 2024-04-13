@@ -1,3 +1,8 @@
+body, .social-icons{
+  font-family: 'Poppins';
+  color:#784E3D;
+}
+
 .container {
   background-color: #FEC48D;
   border-radius: 30px;
@@ -28,6 +33,7 @@
 }
 
 .container .button {
+  font-family: 'Poppins';
   background-color: #784E3D;
   color: #FFE5CC;
   font-size: .75rem;
@@ -39,6 +45,20 @@
   text-transform: uppercase;
   margin-top: .625rem;
   cursor: pointer;
+}
+
+.homeButton {
+  font-family: 'Poppins';
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.3rem;
+  color: #784E3D;
+  font-weight: 500;
+}
+
+.homeButton:hover {
+  background-color: #784E3D;
+  color: #FFE5CC
 }
 
 .container button.hidden {
@@ -63,7 +83,8 @@
   padding: .625rem .938rem;
   font-size: .813rem;
   border-radius: 8px;
-  width: 100%;
+  width: 90%;
+  height: 4%;
   outline: none;
 }
 
@@ -117,6 +138,8 @@
   border: 1px solid #784E3D;
   border-radius: 30px;
   padding: .5rem 1.875rem;
+  background-color: transparent;
+  font-size: 1rem;
 }
 
 .google {
@@ -214,7 +237,9 @@
 }
 
 .welcome {
-  font-size: 3rem; 
+  font-size: 3rem;
+  margin-left: 3rem;
+  font-weight: 400;
 }
 
 .toggle-right, .toggle-left {
@@ -225,20 +250,29 @@
   margin: 2.5rem 0;
   font-size: 1.25rem;
   width: 90%;
+  font-weight: 400;
+}
+
+.toggle-right button, .toggle-right p {
+  margin-left: 4rem;
 }
 
 .createAccountHeader {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   margin-bottom: 1.6rem;
 }
 
 .account {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   width: 110%;
 }
 
+.account, .toggle-left p, .toggle-left button {
+  margin-right: 3.4rem;
+}
+
 .signInHeader, .welcome, .createAccountHeader, .account {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .tabContainer {
@@ -255,6 +289,7 @@
   font-weight: 800;
   font-size: 6rem;
   margin-bottom: 3rem;
+  font-weight: 550;
 }
 
 .home {
@@ -263,8 +298,6 @@
   padding: 0.313rem 0.938rem;
   font-size: 1.3rem;
   display: flex;
-  /* outline: 1px solid #784E3D;
-  border-radius: 25px; */
 }
 
 .home:hover {

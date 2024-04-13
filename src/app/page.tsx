@@ -1,7 +1,7 @@
 import FirstPage from "./landingpage/firstpage/page";
 import SecondPage from "./landingpage/secondpage/page";
 import ThirdPage from "./landingpage/thirdpage/page";
-import PageLayout from "@/Layouts/landingPageLayout/landingPageLayout";
+import PageLayout from "@/Layouts/landingPageLayout/pageLayout";
 
 export const currency = new Intl.NumberFormat('en-US',  {
   style:'currency',

@@ -2,23 +2,25 @@
 import { useState } from 'react';
 import "./register.css";
 import Image from "next/image";
-import google from '../../../public/icons/google-icon.svg';
+import google from '../../public/icons/google-icon.svg';
 import Link from 'next/link';
 import PageLayout from '@/Layouts/landingPageLayout/pageLayout';
+import { getProviders } from 'next-auth/react';
 
-export default function Login() {
+export default function Login({providers}) {
 
-  const [isActive, setIsActive] = useState<Boolean>(false);
-  let headerText: string = isActive ? "Let's Go" : 'Get Started';
+  const [isActive, setIsActive] = useState(false);
+  let headerText = isActive ? "Let's Go" : 'Get Started';
 
   return (
+    
     <PageLayout>
-      <div className="headerContainer">
+       <div className="headerContainer">
         <div className="investify">Investify</div>
         
         <div className="home">
           <Link href={'/'}>
-            <button>Home</button>
+            <button className='homeButton'>Home</button>
           </Link>
         </div>
       </div>
@@ -38,15 +40,17 @@ export default function Login() {
                   <button className="button">Sign Up</button>
 
                   <div className='line'></div>
-                 
-                  <button className='social-icons'>
-                    <Image className="google" src={google} alt='Google Image'/>
-                    Sign in with Google
-                  </button>
+                  
+                  {Object.values(providers).map(provider => (
+                    <button className='social-icons'>
+                      <Image className="google" src={google} alt='Google Image'/>
+                      Sign in with {provider.name}
+                    </button>
+                  ))}
                   
               </form>
           </div>
-         
+          
           <div className="form-container sign-in">
               <form>
                   <div className="signInHeader">Sign In</div>
@@ -56,11 +60,12 @@ export default function Login() {
                   
                   <button className="button signInButton">Sign In</button>
                   <div className="line"></div>
-                  
-                  <button className='social-icons'>
-                    <Image className="google" src={google} alt='Google Image'/>
-                    Log in with Google
-                  </button>
+                  {Object.values(providers).map(provider => (
+                    <button className='social-icons'>
+                      <Image className="google" src={google} alt='Google Image'/>
+                      Log in with {provider.name}
+                    </button>
+                  ))}
                   
               </form>
           </div>
@@ -70,13 +75,13 @@ export default function Login() {
                   
                   <div className="toggle-panel toggle-left">
                       <div className="account">Have an account?</div>
-                      <p>Login and continue managing your investments</p>
-                      <button className="button" id="login" onClick={() => {setIsActive(!isActive)}}>Sign In</button>{/*both this and the reigster sign up button className="hidden"*/} 
+                        <p>Login and continue managing your investments</p>
+                      <button className="button" id="login" onClick={() => {setIsActive(!isActive)}}>Sign In</button> {/*both this and the reigster sign up button className="hidden" */}
                   </div>
 
                   <div className="toggle-panel toggle-right">
                       <div className="welcome">Welcome!</div>
-                      <p>Sign up today and watch your investments take flight!</p>
+                        <p>Sign up today and watch your investments take flight!</p>
                       <button className="button" id="register" onClick={() => {setIsActive(!isActive)}}>Sign Up</button>
                   </div>
               
@@ -85,13 +90,14 @@ export default function Login() {
       </div>
       </div>
     </PageLayout>
+        
   );
   
 }
 
-// export async function getServerSideProps() {
-//   const providers = await getProviders();
-//   return {
-//     props: {providers},
-//   }
-// }
+export async function getServerSideProps() {
+  const providers = await getProviders();
+  return {
+    props: {providers},
+  }
+}
