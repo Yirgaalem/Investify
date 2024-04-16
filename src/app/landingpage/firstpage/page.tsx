@@ -10,12 +10,12 @@ export default function FirstPage() {
     <>
       <div className={styles.register}>
       
-
-        <Link href={'/register'}>
+        <Link href={'/login'}>
           <button className={styles.login}>Login</button>
           <button className={styles.signup}>Sign Up</button>
         </Link>
       </div>
+      
       <div className={styles.logo}>Investify</div>
       <div className={styles.titleContainer}>
         <h1 className={styles.title}>We help manage your investments</h1>

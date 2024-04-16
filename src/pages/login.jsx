@@ -5,7 +5,7 @@ import Image from "next/image";
 import google from '../../public/icons/google-icon.svg';
 import Link from 'next/link';
 import PageLayout from '@/Layouts/landingPageLayout/pageLayout';
-import { getProviders } from 'next-auth/react';
+import { getProviders, signIn } from 'next-auth/react';
 
 export default function Login({providers}) {
 
@@ -42,7 +42,7 @@ export default function Login({providers}) {
                   <div className='line'></div>
                   
                   {Object.values(providers).map(provider => (
-                    <button className='social-icons'>
+                    <button type='button' onClick={() => {signIn(provider.id)}} className='social-icons'>
                       <Image className="google" src={google} alt='Google Image'/>
                       Sign in with {provider.name}
                     </button>
@@ -60,8 +60,9 @@ export default function Login({providers}) {
                   
                   <button className="button signInButton">Sign In</button>
                   <div className="line"></div>
+
                   {Object.values(providers).map(provider => (
-                    <button className='social-icons'>
+                  <button type='button' onClick={() => {signIn(provider.id)}} className='social-icons'>
                       <Image className="google" src={google} alt='Google Image'/>
                       Log in with {provider.name}
                     </button>
