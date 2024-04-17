@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/_document.js", "src/app/[...nextauth].js", "src/app/register/page.tsx", "src/pages/login.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/nvm4rn/_document.js", "src/app/[...nextauth].js", "src/app/register/page.tsx", "src/nvm4rn/login.jsx", "src/lib/db.js", "src/_app.jsx", "src/app/page.tsx", "src/app/auth/api/[...nextauth].js", "src/app/api/auth/[...nextauth]/options.js", "src/app/(models)/User.js", "src/app/api/auth/[...nextauth]/route.js", "src/app/components/UserForm/page.jsx", "src/app/layout.js", "src/app/components/Temp.jsx", "app/page.jsx"],
   "exclude": ["node_modules"]
 }
