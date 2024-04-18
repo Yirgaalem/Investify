@@ -43,7 +43,7 @@ export default function Breakdown(props: breakdownProps) {
           {graph && graphBreakdown}
           {!graph && numericalBreakdown}
         
-        <button onClick={() => setGraph(graph)}>
+        <button onClick={() => setGraph(!graph)}>
           <Image className={styles.arrow} src={rightArrow} alt='rightArrow'/>
         </button>
 
