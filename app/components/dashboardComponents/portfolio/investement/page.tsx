@@ -21,7 +21,7 @@ export default function Investement(props: investementProps) {
   (pnl = `-${currency.format(Math.abs(props.pnl))}`, pnlStyle = styles.negativePnL);
   
   props.type === 'Stock' ?
-  (name = `${currency.format(props.name)}`, typeStyle = styles.stockType)
+  (name = `$${(props.name)}`, typeStyle = styles.stockType)
   :
   (name = `${props.name}`, typeStyle = styles.cryptoType);
 

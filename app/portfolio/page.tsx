@@ -11,10 +11,11 @@ export default function Portfolio() {
       <div className={styles.portfolioContainer}>
         <Header headerLeft='Dashboard' headerMiddle='Portfolio' headerRight='Charts'/>
         <div className={styles.tab}>
-        <PortfolioTab/>
-        <Breakdown stocks={30030.10} crypto={74019.02}/>
+          <PortfolioTab/>
+          <Breakdown stocks={30030.10} crypto={74019.02}/>
         </div>
       </div>
     </PageLayout>
+    
   );
 }

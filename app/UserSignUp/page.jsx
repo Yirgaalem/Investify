@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
+import { useRouter } from "next/navigation";
 import PageLayout from '../../layout/pageLayout';
 import Link from 'next/link';
-import { useRouter } from "next/navigation";
 import google from '../../public/icons/google-icon.svg';
 import Image from 'next/image';
 import './register.css';

@@ -1,7 +1,9 @@
+'use client'
 import styles from './header.module.css';
 import redd from './../../../public/images/sexyy-redd.jpg'
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export type headerProps = {
   headerLeft: string;
@@ -25,6 +27,8 @@ export default function Header(props: headerProps) {
     </div>
   );
 
+  const [drop, setDrop] = useState<Boolean>(false);
+
   return (
     <div className={styles.header}>
       <div className={styles.investify}>Investify</div>
@@ -32,10 +36,23 @@ export default function Header(props: headerProps) {
       {headerContent}
 
       <div className={styles.userContainer}>
-        <Image className={styles.userImage} src={redd} alt='sexyy redd'/> 
-        <div className={styles.userName}>Sexyy Redd</div>
+        <div className={styles.userName} >Sexyy Redd</div>
+        <Image className={styles.userImage} src={redd} alt='sexyy redd' onClick={() => setDrop(!drop)}/> 
+        {drop && <DropDownMenu/>}
       </div>
     
+    </div>
+  );
+}
+
+const DropDownMenu = () => {
+  return (
+    <div className={styles.dropDown}>
+      <ul className='flex flex-col gap-4'>
+        <Link href="/api/auth/signout?callbackUrl=/">
+          <li>Logout</li>
+        </Link>
+      </ul>
     </div>
   );
 }

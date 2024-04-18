@@ -1,12 +1,10 @@
 'use client';
-
-import styles from './breakdown.module.css';
-import pieGraph from '../../../../../public/images/pie-graph.png';
-import Image from 'next/image';
-import leftArrow from '../../../../../public/images/arrow-left-dark.png';
-import rightArrow from '../../../../../public/images/arrow-right-dark.png';
 import { useState } from 'react';
-import { currency } from '@/app/page';
+import styles from './breakdown.module.css';
+import pieGraph from '../../../../public/images/pie-graph.png';
+import Image from 'next/image';
+import leftArrow from '../../../../public/images/arrow-left-dark.png';
+import rightArrow from '../../../../public/images/arrow-right-dark.png';
 
 export type breakdownProps = {
   stocks: number;
@@ -17,7 +15,6 @@ export default function Breakdown(props: breakdownProps) {
   const graphBreakdown: JSX.Element = (
     <Image className={styles.pieGraph} src={pieGraph} alt='pieGraph'/>
   );
-  
 
   const stocks: string = `${currency.format(props.stocks)}`;
   const crypto: string = `${currency.format(props.crypto)}`;
@@ -30,8 +27,7 @@ export default function Breakdown(props: breakdownProps) {
       <div className={styles.total}> {total}</div>
     </div>
   );
-
-  const [breakdownDisplay, setBreakdownDisplay] = useState<JSX.Element>(graphBreakdown);
+  
   const [graph, setGraph] = useState<Boolean>(true);
 
   return (
@@ -40,11 +36,14 @@ export default function Breakdown(props: breakdownProps) {
       
       <div className={styles.graphContainer}>
         
-        <button onClick={() => changeBreakdown(graph, setGraph, setBreakdownDisplay, graphBreakdown, numericalBreakdown)}>
+        <button onClick={() => setGraph(!graph)}>
           <Image className={styles.arrow} src={leftArrow} alt='left-arrow'/>
         </button>
-          {breakdownDisplay}
-        <button onClick={() => changeBreakdown(graph, setGraph, setBreakdownDisplay, graphBreakdown, numericalBreakdown)}>
+
+          {graph && graphBreakdown}
+          {!graph && numericalBreakdown}
+        
+        <button onClick={() => setGraph(graph)}>
           <Image className={styles.arrow} src={rightArrow} alt='rightArrow'/>
         </button>
 
@@ -53,16 +52,7 @@ export default function Breakdown(props: breakdownProps) {
   );
 }
 
-function changeBreakdown(graph: Boolean,
-                        setGraph: Function,
-                        setBreakdownDisplay: Function,
-                        graphBreakdown: JSX.Element,
-                        numericalBreakdown: JSX.Element) {
-  if (graph) {
-    setBreakdownDisplay(numericalBreakdown);
-  } else {
-    setBreakdownDisplay(graphBreakdown);
-  }
-  setGraph(!graph);
-
-}
+const currency = new Intl.NumberFormat('en-US',  {
+  style:'currency',
+  currency: 'USD',
+});
