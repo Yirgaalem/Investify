@@ -6,4 +6,5 @@ body {
   font-family: 'Poppins';
   background-color:#FFE5CC;
   color:#784E3D;
+  overflow-x: hidden;
 }

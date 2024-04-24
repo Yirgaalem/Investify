@@ -1,5 +1,6 @@
+'use client'
 import styles from './investement.module.css';
-import { currency } from '../../../../page';
+// import { currency } from '../../../../page';
 
 export type investementProps = {
   name: string;
@@ -7,6 +8,11 @@ export type investementProps = {
   type: string;
   pnl: number;
 }
+
+const currency = new Intl.NumberFormat('en-US',  {
+  style:'currency',
+  currency: 'USD',
+});
 
 export default function Investement(props: investementProps) {
   const amount: number = props.amount;

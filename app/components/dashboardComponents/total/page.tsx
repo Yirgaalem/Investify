@@ -1,5 +1,6 @@
+'use client'
 import styles from './total.module.css';
-import { currency } from '../../../page';
+import { currency } from '../../../functions/CurrencyFormat';
 
 export type totalProps = {
   amount: number;

@@ -1,3 +1,4 @@
+'use client'
 import Investement from './investement/page';
 import styles from './portfolio.module.css';
 import rightArrow from '../../../../public/images/arrow-right-light.png';

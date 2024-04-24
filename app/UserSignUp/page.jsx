@@ -20,14 +20,14 @@ export default function UserSignUp() {
       [name]: value,
     }));
   };
-
+  console.log(formData);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
     const res = await fetch("/api/Users", {
       method: "POST",
       body: JSON.stringify({ formData }),
-      "content-type": "application/json",
+      "content-type": "application/json", //only for post or put
     });
 
     if (!res.ok) {
@@ -35,9 +35,10 @@ export default function UserSignUp() {
       setErrorMessage(response.message);
     } else {
       router.refresh();
-      router.push("/");
+      router.push("/dashboard");
     }
   };
+  
   const [isActive, setIsActive] = useState(true);
   let headerText = isActive ? "Let's Go" : 'Get Started';
   return (

@@ -1,10 +1,9 @@
 import styles from './ThirdPage.module.css';
-import { featuresRef } from '../firstpage/page';
 
 export default function ThirdPage() {
   return (
 
-    <div ref={featuresRef}>
+    <div>
       <div className={styles.pageThreeTitle}>We Make Your Investments Organized</div>
       <div className={styles.rectangleContianer}>
         <div className={styles.rectangle}></div>

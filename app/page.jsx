@@ -6,15 +6,15 @@ import options from "./api/auth/[...nextauth]/options";
 import { getServerSession }  from 'next-auth';
 import { redirect } from 'next/navigation'
 
-export const currency = new Intl.NumberFormat('en-US',  {
-  style:'currency',
-  currency: 'USD',
-});
+// export const currency = new Intl.NumberFormat('en-US',  {
+//   style:'currency',
+//   currency: 'USD',
+// });
 
 export default async function Home() {
   const session = await getServerSession(options);
   if (session) redirect('/dashboard');
-
+  
   return (
     <PageLayout>
       <FirstPage/>     

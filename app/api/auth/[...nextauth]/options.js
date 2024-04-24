@@ -58,7 +58,7 @@ const options = {
             .exec();
 
           if (foundUser) {
-            console.log("User Exists");
+            console.log("User Exists", foundUser.name);
             const match = await bcrypt.compare(
               credentials.password,
               foundUser.password
@@ -67,6 +67,9 @@ const options = {
             if (match) {
               console.log("Good Pass");
               delete foundUser.password;
+              
+              const userDocument = await User.findOne({email: credentials.email});
+              foundUser['_id'] = userDocument._id.toString();
 
               foundUser["role"] = "Unverified Email";
               return foundUser;
@@ -82,11 +85,17 @@ const options = {
 
   callbacks: {
     async jwt({ token, user }) {
-      if (user) token.role = user.role;
+      if (user) {
+        token.role = user.role;
+        token._id = user._id
+      }
       return token;
     },
     async session({ session, token }) {
-      if (session?.user) session.user.role = token.role;
+      if (session?.user) {
+        session.user.role = token.role;
+        session.user._id = token._id;
+      }
       return session;
     },
   },

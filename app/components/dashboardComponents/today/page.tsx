@@ -1,5 +1,6 @@
+'use client'
 import styles from './today.module.css';
-import { currency } from '../../../page';
+import { currency } from '../../../functions/CurrencyFormat';
 
 export type todayProps = {
   total: number;

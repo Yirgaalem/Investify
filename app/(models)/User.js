@@ -8,6 +8,21 @@ const userSchema = new Schema(
     name: String,
     email: String,
     password: String,
+    // stock: String,
+    // crypto: String,
+     stock: 
+    [{
+      stockName: String,
+      amount: Number,
+      purchasePrice: Number,
+    }],
+    crypto: 
+    [{
+      cryptoName: String,
+      amount: Number,
+      purchasePrice: Number,
+    }],
+    // picture: Image,
   },
   {
     timestamps: true,

@@ -4,6 +4,8 @@ import redd from './../../../public/images/sexyy-redd.jpg'
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import GetUser from '../../functions/GetUser';
+import { User } from '../../functions/Context/UserContext';
 
 export type headerProps = {
   headerLeft: string;
@@ -12,6 +14,8 @@ export type headerProps = {
 };
 
 export default function Header(props: headerProps) {
+  const user: User | undefined = GetUser();
+  const userName = user[0]?.name;
   
   const headerContent: JSX.Element = (
     <div className={styles.headerOptions}>
@@ -24,6 +28,7 @@ export default function Header(props: headerProps) {
       <Link href={`/${props.headerRight.toLowerCase()}`}>
         <button className={styles.right}>{props.headerRight}</button>
       </Link>
+      <Link href='/Investment'><button>Investement</button></Link>
     </div>
   );
 
@@ -32,11 +37,10 @@ export default function Header(props: headerProps) {
   return (
     <div className={styles.header}>
       <div className={styles.investify}>Investify</div>
-  
+    
       {headerContent}
-
-      <div className={styles.userContainer}>
-        <div className={styles.userName} >Sexyy Redd</div>
+      <div className={styles.userContainer}>{/* Make this absolute so it doesn't effect position of header components */}
+        <div className={styles.userName}>{ userName }</div>
         <Image className={styles.userImage} src={redd} alt='sexyy redd' onClick={() => setDrop(!drop)}/> 
         {drop && <DropDownMenu/>}
       </div>
