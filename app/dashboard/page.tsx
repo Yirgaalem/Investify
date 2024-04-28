@@ -6,17 +6,18 @@ import Total from '../components/dashboardComponents/total/page';
 import Today from '../components/dashboardComponents/today/page';
 import Portfolio from '../components/dashboardComponents/portfolio/page';
 import Charts from '../components/dashboardComponents/charts/page';
-import { useUserContext } from '../functions/Context/UserContext';
+import GetUser from '../functions/GetUser';
+import { User } from '../functions/Context/UserContext';
 
 const Dashboard = () => {
 
-  const {user, setUser} = useUserContext();
-  
+  const user: User | undefined = GetUser();  
   // const stocks: number = Number(user[0].stocks.amount);
   // const crypto: number = Number(user[0].crypto.amount);
-
+  
   const stocks: number = Number(user[0]?.stock);
   const crypto: number = Number(user[0]?.crypto);
+
   /*
     Both Stocks and Crypto have 3 properites
       1. Stock Name
@@ -34,7 +35,6 @@ const Dashboard = () => {
   
   */
   // const amount: number = stocks + crypto;
-
 
   return (
     <PageLayout>

@@ -13,16 +13,15 @@ const userSchema = new Schema(
      stock: 
     [{
       stockName: String,
-      amount: Number,
-      purchasePrice: Number,
+      stockAmount: Number,
+      stockPurchasePrice: Number,
     }],
     crypto: 
     [{
-      cryptoName: String,
+      name: String,
       amount: Number,
       purchasePrice: Number,
     }],
-    // picture: Image,
   },
   {
     timestamps: true,

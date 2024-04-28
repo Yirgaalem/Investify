@@ -20,14 +20,14 @@ export default function UserSignUp() {
       [name]: value,
     }));
   };
-  console.log(formData);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
     const res = await fetch("/api/Users", {
       method: "POST",
       body: JSON.stringify({ formData }),
-      "content-type": "application/json", //only for post or put
+      "content-type": "application/json", 
     });
 
     if (!res.ok) {

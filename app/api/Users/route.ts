@@ -20,8 +20,9 @@ export async function POST(req: Request) {
     if (duplicate) {
       return NextResponse.json({ message: 'Duplicate Email'}, {status: 409});
     }
-    userData.stock = '';
-    userData.crypto = '';
+    
+    userData.stock = [];
+    userData.crypto = [];
 
     const hashPassword = await bcrypt.hash(userData.password, 10);
     userData.password = hashPassword;

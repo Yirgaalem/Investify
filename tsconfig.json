@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/nvm4rn/_document.js", "src/app/[...nextauth].js", "src/app/register/page.tsx", "src/nvm4rn/login.jsx", "src/lib/db.js", "src/_app.jsx", "src/app/page.tsx", "src/app/auth/api/[...nextauth].js", "src/app/api/auth/[...nextauth]/options.js", "src/app/(models)/User.js", "src/app/api/auth/[...nextauth]/route.js", "src/app/components/UserForm/page.jsx", "src/app/layout.js", "src/app/components/Temp.jsx", "app/page.jsx", "app/UserSignUp/page.jsx", "app/api/auth/[...nextauth]/options.js", "app/components/portfolioComponents/breakdown/page.tsx", "app/Investment/[id]/page.jsx", "app/api/Users/route.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/nvm4rn/_document.js", "src/app/[...nextauth].js", "src/app/register/page.tsx", "src/nvm4rn/login.jsx", "src/lib/db.js", "src/_app.jsx", "src/app/page.tsx", "src/app/auth/api/[...nextauth].js", "src/app/api/auth/[...nextauth]/options.js", "src/app/(models)/User.js", "src/app/api/auth/[...nextauth]/route.js", "src/app/components/UserForm/page.jsx", "src/app/layout.js", "src/app/components/Temp.jsx", "app/page.jsx", "app/UserSignUp/page.jsx", "app/api/auth/[...nextauth]/options.js", "app/components/portfolioComponents/breakdown/page.tsx", "app/Investment/[id]/page.jsx", "app/api/Users/route.ts", "app/Investment/page.tsx"],
   "exclude": ["node_modules"]
 }

@@ -2,6 +2,7 @@
 import { createContext, useContext, useState, Dispatch, SetStateAction } from "react";
 
 export type User = {
+  _id: String,
   crypto: [],
   name: String,
   email: String,
@@ -15,6 +16,7 @@ interface UserContextProps {
 
 const UserContext = createContext<UserContextProps>({
   user: {
+    _id: '',
     crypto: [],
     name: '',
     email: '',
@@ -25,6 +27,7 @@ const UserContext = createContext<UserContextProps>({
 
 export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState({
+    _id: '',
     crypto: [],
     name: '',
     email: '',

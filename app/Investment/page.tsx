@@ -3,40 +3,34 @@ import PageLayout from '../../layout/pageLayout';
 import styles from './investement.module.css';
 import React, { useState } from 'react';
 import { useRouter } from "next/navigation";
+import { User } from '../functions/Context/UserContext';
+import GetUser from '../functions/GetUser';
 
-
-const Investement = ( { user } ) => {
+const Investement = () => {
   const router = useRouter();
-  console.log('url: ' + window.location.href);
-  // const startingUser = {
-  //   name: user.name,
-  //   email: user.email,
-  //   password: user.password,
-  //   stock: user.stock,
-  //   crypto: user.crypto,
-  // }
-
-  const [formData, setFormData] = useState({});
+  const user: User | undefined = GetUser()[0];  
+  
+  const [stock, setStock] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
-    setFormData((prevState) => ({
+    setStock((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  console.log(user);
-  
+  stock._id = user?._id;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
-
-    const res = await fetch(`/api/Users/${user._id}`, {
+  
+    const res = await fetch(`/api/Users/${user?._id}`, {
       method: "PUT",
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({stock}),
       "content-type": "application/json",
     });
 
@@ -49,7 +43,6 @@ const Investement = ( { user } ) => {
     }
   };
 
-
   return (
     <PageLayout>
       <div className={styles.addContainer}>
@@ -60,31 +53,31 @@ const Investement = ( { user } ) => {
               onSubmit={handleSubmit}
               method="post"
             >
-              <input id="stock"
-                name="stock"
+              <input id="stockName"
+                name="stockName"
                 type="text"
                 placeholder="Name" 
                 onChange={handleChange}
                 required={true}
-                value={formData.stock}
+                value={stock.stockName}
                 className={styles.input}
               />
-              <input id="amount"
-                name="amount"
+              <input id="stockAmount"
+                name="stockAmount"
                 type="text"
                 placeholder="Shares" 
                 onChange={handleChange}
                 required={true}
-                value={formData.amount}
+                value={stock.stockAmount}
                 className={styles.input}
               />
-              <input  id="purchasePrice"
-                name="purchasePrice"
+              <input  id="stockPurchasePrice"
+                name="stockPurchasePrice"
                 type="text"
                 placeholder="Purchase Price no $" 
                 onChange={handleChange}
                 required={true}
-                value={formData.purchasePrice}
+                value={stock.stockPurchasePrice}
                 className={styles.input}
               />
               <input
@@ -107,7 +100,7 @@ const Investement = ( { user } ) => {
                 placeholder="Name" 
                 onChange={handleChange}
                 required={true}
-                value={formData.crypto}
+                value={stock.crypto}
                 className={styles.input}
               />
               <input id="amount"
@@ -116,7 +109,7 @@ const Investement = ( { user } ) => {
                 placeholder="Shares" 
                 onChange={handleChange}
                 required={true}
-                value={formData.amount}
+                value={stock.amount}
                 className={styles.input}
               />
               <input  id="purchasePrice"
@@ -125,7 +118,7 @@ const Investement = ( { user } ) => {
                 placeholder="Purchase Price no $" 
                 onChange={handleChange}
                 required={true}
-                value={formData.purchasePrice}
+                value={stock.purchasePrice}
                 className={styles.input}
               />
               <input
