@@ -12,17 +12,18 @@ import { User } from '../functions/Context/UserContext';
 const Dashboard = () => {
 
   const user: User | undefined = GetUser(); 
-  
+  console.log(user);
   let stockPurchaseAmount: number = 0;
+
   user?.stock.map((stock) => {
     stockPurchaseAmount += (stock.stockAmount * stock.stockPurchasePrice);
   });
 
   let cryptoPurchaseAmount: number = 0;
-  // user?.crypto.map((crypto) => {
-  //   cryptoPurchaseAmount += (crypto.cryptoAmount * crypto.cryptoPurchasePrice);
-  // });
-  console.log(user)
+  user?.crypto.map((crypto) => {
+    cryptoPurchaseAmount += (crypto.cryptoAmount * crypto.cryptoPurchasePrice);
+  });
+
   const totalAmount: number = stockPurchaseAmount + cryptoPurchaseAmount;
 
   /*
@@ -31,7 +32,7 @@ const Dashboard = () => {
 
   /*
     * TOTAL TAB 
-      -> Map thru the user.stock => Add up each amount => set it to total stock amount 
+      -> ✔️ Map thru the user.stock => Add up each amount => set it to total stock amount 
       -> Either create new attribute which is total profit updating every day or something or
          Total Up or Down on current holdings. To do this, take:
          (purchase price of Stock - current stock price) * amount 

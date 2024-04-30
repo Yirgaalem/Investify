@@ -1,18 +1,15 @@
 'use client'
 import styles from './investement.module.css';
-// import { currency } from '../../../../page';
+import { currency } from '../../../../functions/CurrencyFormat';
 
 export type investementProps = {
   name: string;
   amount: number;
   type: string;
-  pnl: number;
+  // pnl: number;
+  purchasePrice: number
 }
 
-const currency = new Intl.NumberFormat('en-US',  {
-  style:'currency',
-  currency: 'USD',
-});
 
 export default function Investement(props: investementProps) {
   const amount: number = props.amount;
@@ -21,17 +18,19 @@ export default function Investement(props: investementProps) {
   let pnl: string = '';  let pnlStyle: string = '';
 
 
-  props.pnl > 0 ? 
-  (pnl = `+${currency.format(props.pnl)}`, pnlStyle = styles.positivePnL) 
-  : 
-  (pnl = `-${currency.format(Math.abs(props.pnl))}`, pnlStyle = styles.negativePnL);
+  // props.pnl > 0 ? 
+  // (pnl = `+${currency.format(props.pnl)}`, pnlStyle = styles.positivePnL) 
+  // : 
+  // (pnl = `-${currency.format(Math.abs(props.pnl))}`, pnlStyle = styles.negativePnL);
   
-  props.type === 'Stock' ?
-  (name = `$${(props.name)}`, typeStyle = styles.stockType)
-  :
-  (name = `${props.name}`, typeStyle = styles.cryptoType);
+  name = props.name;
+  typeStyle = styles.cryptoType;
 
-  
+  if (props.type === 'Stock') {
+    typeStyle = styles.stockType;
+    props.name[0] === '$' ? name = props.name : name = `$${props.name}`
+  } 
+
   return (
     <div className={styles.investementContainer}>
       <div className={styles.name}>{name}</div>
