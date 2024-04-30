@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import styles from './breakdown.module.css';
-import pieGraph from '../../../../public/images/pie-graph.png';
 import Image from 'next/image';
 import leftArrow from '../../../../public/images/arrow-left-dark.png';
 import rightArrow from '../../../../public/images/arrow-right-dark.png';
@@ -10,16 +9,12 @@ import { currency } from '../../../functions/CurrencyFormat';
 import Chart from 'chart.js/auto';
 import { Pie, Doughnut } from 'react-chartjs-2';
 import {CategoryScale} from 'chart.js'; 
-import sourceData from '../../../data/sourceData.json';
 
 export type breakdownProps = {
   user: User | undefined
 }
 
 export default function Breakdown(props: breakdownProps) {
-  // const graphBreakdown: JSX.Element = (
-  //   <Image className={styles.pieGraph} src={pieGraph} alt='pieGraph'/>
-  // );
 
   const user: User | undefined = props.user; 
 

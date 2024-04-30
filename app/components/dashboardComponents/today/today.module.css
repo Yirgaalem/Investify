@@ -32,6 +32,7 @@
 .totalStyle, .stocksStyle, .cryptoStyle {
   padding-bottom: 1.3rem;
   font-weight: 500;
+  margin-right: .5rem;
 }
 
 .totalStyle, .stocksStyle { 

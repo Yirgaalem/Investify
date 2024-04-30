@@ -1,12 +1,20 @@
 'use client'
-import Investement from './investement/page';
+
 import styles from './portfolio.module.css';
 import rightArrow from '../../../../public/images/arrow-right-light.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getCryptoInvestments, getStockInvestments } from '../../../components/portfolioComponents/portfolioTab/page';
+import { User } from '../../../functions/Context/UserContext';
 
-export default function Portfolio() {
-  
+type portfolioProps = {
+  user: User | undefined
+}
+
+export default function Portfolio(props: portfolioProps) {
+  const stockArray: JSX.Element[] = getStockInvestments(props.user);
+  const cryptoArray: JSX.Element[] = getCryptoInvestments(props.user);
+
   return (
     <div className={styles.portfolioContainer}>
       
@@ -14,8 +22,8 @@ export default function Portfolio() {
         <div className={styles.portfolioTitle}>Portfolio</div>
         
         <Link href="/portfolio">
-          <button className={styles.investements}>
-            All Investements <Image className={styles.rightArrow} src={rightArrow} alt='right-arrow'/>
+          <button className={styles.investment}>
+            All Investments <Image className={styles.rightArrow} src={rightArrow} alt='right-arrow'/>
           </button>
         </Link>
       
@@ -28,9 +36,8 @@ export default function Portfolio() {
         <div className={styles.profitLoss}>P&L</div>
       </div>
 
-      <Investement name='Bitcoin' amount={0.5} type='Crypto' pnl={-9.99}/>
-      <Investement name='TSLA' amount={20} type='Stock' pnl={205.99}/>
-      <Investement name='AAPL' amount={100} type='Stock' pnl={328.99}/>
+      {stockArray}
+      {cryptoArray}
     </div >
   );
 }

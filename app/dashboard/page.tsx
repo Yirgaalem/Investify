@@ -71,7 +71,7 @@ const Dashboard = () => {
           </div>
           
           <div className={styles.bottom}>
-            <Portfolio/>
+            <Portfolio user={user}/>
             <Charts/>
           </div>
         </div> 

@@ -1,8 +1,8 @@
 'use client'
-import styles from './investement.module.css';
+import styles from './investment.module.css';
 import { currency } from '../../../../functions/CurrencyFormat';
 
-export type investementProps = {
+export type investmentProps = {
   name: string;
   amount: number;
   type: string;
@@ -11,7 +11,7 @@ export type investementProps = {
 }
 
 
-export default function Investement(props: investementProps) {
+export default function Investment(props: investmentProps) {
   const amount: number = props.amount;
   const type: string = props.type; let typeStyle: string = '';
   let name: string = '';
@@ -32,7 +32,7 @@ export default function Investement(props: investementProps) {
   } 
 
   return (
-    <div className={styles.investementContainer}>
+    <div className={styles.investmentContainer}>
       <div className={styles.name}>{name}</div>
       <div className={styles.amount}>{amount}</div>
       <div className={typeStyle}>{type}</div>

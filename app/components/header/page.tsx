@@ -1,11 +1,11 @@
 'use client'
-import styles from './header.module.css';
-import redd from './../../../public/images/sexyy-redd.jpg'
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import redd from './../../../public/images/sexyy-redd.jpg'
 import GetUser from '../../functions/GetUser';
 import { User } from '../../functions/Context/UserContext';
+import styles from './header.module.css';
 
 export type headerProps = {
   headerLeft: string;
@@ -22,13 +22,14 @@ export default function Header(props: headerProps) {
       <Link href={`/${props.headerLeft.toLowerCase()}`}>
         <button className={styles.left}>{props.headerLeft}</button>
       </Link>
-      
-      <button className={styles.middle}>{props.headerMiddle}</button>
 
+      <Link href={`/${props.headerMiddle.toLowerCase()}`}>
+        <button className={styles.middle}>{props.headerMiddle}</button>
+      </Link>
+      
       <Link href={`/${props.headerRight.toLowerCase()}`}>
         <button className={styles.right}>{props.headerRight}</button>
       </Link>
-      <Link href='/investment'><button>Investement</button></Link>
     </div>
   );
 

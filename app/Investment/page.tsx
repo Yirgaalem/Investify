@@ -2,12 +2,15 @@
 import PageLayout from '../../layout/pageLayout';
 import CryptoForm from '../components/CryptoForm/page';
 import StockForm from '../components/StockForm/page';
-import styles from './investement.module.css';
+import Header from '../components/header/page';
+import styles from './investment.module.css';
 
-const Investement = () => {
- 
+const Investment = () => {
+
   return (
     <PageLayout>
+      <Header headerLeft='Dashboard' headerMiddle='Portfolio' headerRight='Charts'/>
+      <div className={styles.Header}>Add Your Investments</div>
       <div className={styles.formContainer}>
         <StockForm/>
         <CryptoForm/>
@@ -16,4 +19,4 @@ const Investement = () => {
   );
 }
 
-export default Investement;
+export default Investment;

@@ -28,7 +28,12 @@
   color: transparent;
   left: 5vw;
   top: 2vh;
+  /* transition: transform .7s ease-in-out; */
 }
+
+/* .investify:hover {
+  transform: rotate(360deg);
+} */
 
 .userContainer {
   display: flex;
