@@ -8,8 +8,6 @@ const userSchema = new Schema(
     name: String,
     email: String,
     password: String,
-    // stock: String,
-    // crypto: String,
      stock: 
     [{
       stockName: String,
@@ -18,9 +16,9 @@ const userSchema = new Schema(
     }],
     crypto: 
     [{
-      name: String,
-      amount: Number,
-      purchasePrice: Number,
+      cryptoName: String,
+      cryptoAmount: Number,
+      cryptoPurchasePrice: Number,
     }],
   },
   {

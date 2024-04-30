@@ -11,14 +11,14 @@ export async function PUT(req: Request) {
     if (!userData?.cryptoName || !userData.cryptoAmount || !userData.cryptoPurchasePrice) {
       return NextResponse.json({ message: 'All fields are required'}, {status: 400});
     }
-
-    const foundUser = await User.findByIdAndUpdate(userData._id, body);
-    
-    if (foundUser)
-      return NextResponse.json({ message: 'User Updated'}, {status: 200})
-    else  
-      return NextResponse.json({message: 'Cannot Find User'}, {status:500});
   
+    const user = await User.findById(userData._id);
+    // console.log(user)
+    // Find the user by id and set the crypto to what currently exists, and push new crypto to array
+    await User.updateOne({_id: userData._id}, {crypto: [...user.crypto, userData]});
+
+    return NextResponse.json({ message: 'User Updated'}, {status: 200});
+    
   } catch (err) {
     console.log(err) //error
     return NextResponse.json({ message: 'Error', err}, {status: 500})

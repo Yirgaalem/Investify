@@ -22,7 +22,7 @@ const Dashboard = () => {
   // user?.crypto.map((crypto) => {
   //   cryptoPurchaseAmount += (crypto.cryptoAmount * crypto.cryptoPurchasePrice);
   // });
-  console.log(user?.stock)
+  console.log(user)
   const totalAmount: number = stockPurchaseAmount + cryptoPurchaseAmount;
 
   /*
