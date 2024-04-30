@@ -15,7 +15,7 @@ export type headerProps = {
 
 export default function Header(props: headerProps) {
   const user: User | undefined = GetUser();
-  const userName = user[0]?.name;
+  const userName = user?.name;
   
   const headerContent: JSX.Element = (
     <div className={styles.headerOptions}>
@@ -28,7 +28,7 @@ export default function Header(props: headerProps) {
       <Link href={`/${props.headerRight.toLowerCase()}`}>
         <button className={styles.right}>{props.headerRight}</button>
       </Link>
-      <Link href='/Investment'><button>Investement</button></Link>
+      <Link href='/investment'><button>Investement</button></Link>
     </div>
   );
 

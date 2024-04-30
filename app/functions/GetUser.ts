@@ -29,7 +29,7 @@ const GetUser = () => {
     }
     fetchUser();
     }, []); 
-  if (user != undefined) return user;
+  if (user != undefined) return user[0];
 }
 
 const getUserEmail = async () => {

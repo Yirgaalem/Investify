@@ -11,13 +11,36 @@ import { User } from '../functions/Context/UserContext';
 
 const Dashboard = () => {
 
-  const user: User | undefined = GetUser();  
-  // const stocks: number = Number(user[0].stocks.amount);
-  // const crypto: number = Number(user[0].crypto.amount);
+  const user: User | undefined = GetUser(); 
   
-  const stocks: number = Number(user[0]?.stock);
-  const crypto: number = Number(user[0]?.crypto);
+  let stockPurchaseAmount: number = 0;
+  user?.stock.map((stock) => {
+    stockPurchaseAmount += (stock.stockAmount * stock.stockPurchasePrice);
+  });
 
+  let cryptoPurchaseAmount: number = 0;
+  // user?.crypto.map((crypto) => {
+  //   cryptoPurchaseAmount += (crypto.cryptoAmount * crypto.cryptoPurchasePrice);
+  // });
+  console.log(user?.stock)
+  const totalAmount: number = stockPurchaseAmount + cryptoPurchaseAmount;
+
+  /*
+   *  Need a real time stock and crypto price API. Will take the (stockAmount * the api response) for total amount
+   */
+
+  /*
+    * TOTAL TAB 
+      -> Map thru the user.stock => Add up each amount => set it to total stock amount 
+      -> Either create new attribute which is total profit updating every day or something or
+         Total Up or Down on current holdings. To do this, take:
+         (purchase price of Stock - current stock price) * amount 
+    * TODAY TAB
+      -> Total is stock (purchasePrice - open price) * amount + crypto (purchasePrice - open price) * amount
+      -> Before doing so we just determine Stock PnL and Crypto PnL for the day
+   */
+
+  
   /*
     Both Stocks and Crypto have 3 properites
       1. Stock Name
@@ -25,7 +48,7 @@ const Dashboard = () => {
       3. Purchase Price
 
     Total:
-      -> For the amount simply add stocks amount and cryptoamount
+      -> For the amount simply add stocks amount and crypto amount
       -> For the PnL, we must take the purchased price of each and subtract it from the current value of the stock or crypto 
           -> (Current Price - Purchase Price)
     
@@ -42,7 +65,7 @@ const Dashboard = () => {
         
          <div className={styles.dashboardContent}>
           <div className={styles.top}>
-            <Total amount={103030.90} pnl={28019.90}/>
+            <Total amount={totalAmount} pnl={28019.90}/>
             <Today total={3832.12} stocks={4832.12} crypto={-1000.00}/>
           </div>
           
